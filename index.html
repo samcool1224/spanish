@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>El Mundo del Trabajo | Spanish Grammar Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f3ec;
+    --bg-soft: #fbf8f2;
+    --panel: rgba(255, 252, 247, 0.86);
+    --panel-strong: #fffdf9;
+    --border: #e6dbcb;
+    --text: #2c261f;
+    --muted: #6f6255;
+    --muted-2: #8b7e6f;
+    --accent-rose: #d9a6aa;
+    --accent-peach: #f3c8ad;
+    --accent-sage: #b7cbb2;
+    --accent-sky: #b9cde3;
+    --accent-lilac: #c9c1e6;
+    --accent-gold: #d7bc78;
+    --shadow: 0 18px 50px rgba(72, 55, 38, 0.08);
+    --shadow-soft: 0 8px 24px rgba(72, 55, 38, 0.06);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(217, 166, 170, 0.25), transparent 28%),
+      radial-gradient(circle at top right, rgba(185, 205, 227, 0.28), transparent 24%),
+      radial-gradient(circle at bottom left, rgba(183, 203, 178, 0.18), transparent 22%),
+      linear-gradient(180deg, #fcfaf6 0%, #f7f3ec 100%);
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.22;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), transparent 92%);
+  }
+
+  a { color: inherit; }
+  .shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 20px auto 48px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,250,244,0.82));
+    border: 1px solid rgba(230, 219, 203, 0.9);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::before,
+  .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(2px);
+    opacity: 0.9;
+  }
+  .hero::before {
+    width: 240px; height: 240px;
+    background: rgba(185, 205, 227, 0.22);
+    top: -90px; right: -80px;
+  }
+  .hero::after {
+    width: 180px; height: 180px;
+    background: rgba(217, 166, 170, 0.22);
+    bottom: -70px; left: -60px;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--accent-rose), var(--accent-peach));
+    box-shadow: 0 0 0 4px rgba(217, 166, 170, 0.16);
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 22px;
+    align-items: stretch;
+    margin-top: 22px;
+  }
+
+  .hero-copy h1 {
+    margin: 0;
+    font-family: Fraunces, serif;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+  .hero-copy h1 span { display: block; }
+  .hero-copy h1 em {
+    font-style: italic;
+    color: #5f5448;
+  }
+
+  .hero-copy p {
+    margin: 16px 0 0;
+    max-width: 64ch;
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+  }
+
+  .hero-points {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+
+  .chip {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(68, 53, 35, 0.04);
+  }
+
+  .hero-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(251,248,242,0.92));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .hero-card .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+  }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .metric {
+    background: var(--panel-strong);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 14px;
+  }
+  .metric strong {
+    display: block;
+    font-family: Fraunces, serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .hero-note {
+    border-radius: 18px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(185,205,227,0.18), rgba(217,166,170,0.12));
+    border: 1px solid rgba(230, 219, 203, 0.9);
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.96rem;
+  }
+
+  .tabs-wrap {
+    position: sticky;
+    top: 12px;
+    z-index: 30;
+    margin-top: 18px;
+    padding: 10px;
+    background: rgba(255,255,255,0.62);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(230, 219, 203, 0.85);
+    border-radius: 999px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .tab-btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 14px 16px;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .tab-btn:hover { transform: translateY(-1px); color: var(--text); }
+  .tab-btn.active {
+    color: #1f1a16;
+    background: linear-gradient(135deg, rgba(243, 200, 173, 0.52), rgba(185, 205, 227, 0.36));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+  }
+  .tab-btn[data-tab="future"].active { background: linear-gradient(135deg, rgba(217,166,170,0.52), rgba(243,200,173,0.38)); }
+  .tab-btn[data-tab="future-perfect"].active { background: linear-gradient(135deg, rgba(183,203,178,0.58), rgba(185,205,227,0.34)); }
+  .tab-btn[data-tab="past-subjunctive"].active { background: linear-gradient(135deg, rgba(185,205,227,0.52), rgba(201,193,230,0.38)); }
+
+  main { margin-top: 18px; }
+  .panel { display: none; }
+  .panel.active { display: block; animation: panelFade 0.28s ease; }
+  @keyframes panelFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+    gap: 18px;
+    margin-top: 18px;
+    align-items: start;
+  }
+
+  .lesson-column, .side-column {
+    display: grid;
+    gap: 18px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.78);
+    border: 1px solid rgba(230, 219, 203, 0.95);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-accent {
+    border-left: 6px solid var(--accent-rose);
+  }
+  .panel[data-panel="future"] .card-accent { border-left-color: var(--accent-rose); }
+  .panel[data-panel="future-perfect"] .card-accent { border-left-color: var(--accent-sage); }
+  .panel[data-panel="past-subjunctive"] .card-accent { border-left-color: var(--accent-sky); }
+
+  .kicker {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted-2);
+    margin-bottom: 10px;
+  }
+
+  h2, h3, h4 {
+    margin: 0;
+    font-family: Fraunces, serif;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    line-height: 1.08;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 1.22rem;
+    margin: 22px 0 10px;
+  }
+
+  h4 {
+    font-size: 1.02rem;
+    margin-bottom: 10px;
+  }
+
+  p, li {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .text-block p + p { margin-top: 12px; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .mini-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(251,248,242,0.9));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 16px;
+  }
+  .mini-card p { margin: 0; font-size: 0.94rem; }
+
+  .formula {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .formula-item {
+    background: linear-gradient(135deg, rgba(243,200,173,0.17), rgba(255,255,255,0.9));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 14px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .formula-item span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .vocab-panel {
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(251,248,242,0.96));
+    border: 1px solid rgba(230, 219, 203, 0.96);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+  }
+
+  .vocab-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .vocab-item {
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(247,243,236,0.9);
+    border: 1px solid var(--border);
+  }
+  .vocab-item strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-size: 0.98rem;
+  }
+  .vocab-item span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+  }
+
+  .example-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .example {
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(185,205,227,0.16), rgba(255,255,255,0.96));
+    border: 1px solid var(--border);
+    padding: 15px 16px;
+  }
+  .example .es {
+    font-family: Fraunces, serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2d2520;
+    margin-bottom: 6px;
+  }
+  .example .en {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .pill {
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.9);
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .rule-list {
+    margin: 12px 0 0;
+    padding-left: 20px;
+  }
+  .rule-list li { margin: 9px 0; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 14px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.84);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+  }
+  th, td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid #ece2d5;
+    vertical-align: top;
+  }
+  th {
+    background: linear-gradient(180deg, #fbf7f1, #f7f1e8);
+    color: #5f5447;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  td { color: var(--muted); font-size: 0.95rem; }
+  tr:last-child td { border-bottom: 0; }
+
+  .accent-band {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .accent-box {
+    background: linear-gradient(135deg, rgba(217,166,170,0.14), rgba(255,255,255,0.95));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 15px 16px;
+  }
+  .accent-box.alt-2 { background: linear-gradient(135deg, rgba(183,203,178,0.15), rgba(255,255,255,0.95)); }
+  .accent-box.alt-3 { background: linear-gradient(135deg, rgba(185,205,227,0.15), rgba(255,255,255,0.95)); }
+  .accent-box strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text);
+    font-size: 0.96rem;
+  }
+  .accent-box span {
+    display: block;
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+
+  .practice-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .progress-note {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .quiz-wrap {
+    display: grid;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .mcq-card {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(230, 219, 203, 0.95);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mcq-num {
+    color: var(--muted-2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .mcq-question {
+    font-family: Fraunces, serif;
+    font-size: 1.08rem;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .mcq-options {
+    display: grid;
+    gap: 10px;
+  }
+
+  .mcq-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fffdf9, #faf6ef);
+    padding: 13px 14px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 0.96rem;
+    text-align: left;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+  }
+  .mcq-option:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(72,55,38,0.06); }
+  .mcq-option.disabled { cursor: default; }
+
+  .opt-letter {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    background: rgba(183,203,178,0.16);
+    border: 1px solid var(--border);
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #5f5448;
+  }
+
+  .mcq-option.correct {
+    background: linear-gradient(180deg, rgba(183,203,178,0.28), rgba(255,255,255,0.95));
+    border-color: #afc3a8;
+  }
+  .mcq-option.correct .opt-letter { background: #a9c0a1; color: #fff; border-color: #a9c0a1; }
+  .mcq-option.incorrect {
+    background: linear-gradient(180deg, rgba(217,166,170,0.24), rgba(255,255,255,0.95));
+    border-color: #d29ea2;
+  }
+  .mcq-option.incorrect .opt-letter { background: #d49da2; color: #fff; border-color: #d49da2; }
+
+  .mcq-feedback {
+    display: none;
+    margin-top: 12px;
+    padding: 14px 15px;
+    border-radius: 16px;
+    background: rgba(247,243,236,0.95);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.93rem;
+  }
+  .mcq-feedback.show { display: block; }
+  .mcq-feedback em { color: #41362d; font-style: italic; }
+
+  .score-banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(185,205,227,0.17), rgba(217,166,170,0.12));
+    border: 1px solid var(--border);
+  }
+  .score-text {
+    font-family: Fraunces, serif;
+    font-size: 1.08rem;
+    color: var(--text);
+  }
+  .score-text span { font-weight: 700; }
+
+  .reset-btn {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.9);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 11px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+  }
+  .reset-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,55,38,0.06); }
+
+  footer {
+    margin-top: 18px;
+    padding: 18px 6px 2px;
+    color: var(--muted-2);
+    font-size: 0.84rem;
+    text-align: center;
+  }
+
+  @media (max-width: 1020px) {
+    .hero-grid, .section-shell { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 760px) {
+    .shell { width: min(100% - 18px, 1180px); margin-top: 10px; }
+    .hero, .card, .vocab-panel { border-radius: 22px; }
+    .hero { padding: 20px; }
+    .tabs-wrap { border-radius: 24px; }
+    .tabs { grid-template-columns: 1fr; }
+    .tab-btn { width: 100%; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .metric-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Spanish 2 Grammar Reference</div>
+        <div class="chip">Pastel paper style</div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>
+            <span>El Mundo del Trabajo</span>
+            <span><em>Spanish Grammar</em> for Spanish 2</span>
+          </h1>
+          <p>
+            A polished reference page for the future tense, future perfect, and past subjunctive, built around workplace vocabulary such as occupations, job applications, interviews, companies, and career goals. The lessons are detailed, practical, and written for a high school Spanish 2 classroom.
+          </p>
+          <div class="hero-points">
+            <div class="chip">Three interactive tabs</div>
+            <div class="chip">Detailed English grammar notes</div>
+            <div class="chip">Vocabulary woven into examples</div>
+            <div class="chip">Self-check quiz for each tense</div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="card-title">What this page covers</div>
+          <div class="metric-grid">
+            <div class="metric"><strong>3</strong><span>grammar topics taught in separate sections</span></div>
+            <div class="metric"><strong>15</strong><span>practice questions with feedback</span></div>
+            <div class="metric"><strong>40+</strong><span>workplace vocabulary items used naturally</span></div>
+            <div class="metric"><strong>1</strong><span>clean single-file HTML lesson</span></div>
+          </div>
+          <div class="hero-note">
+            The design uses a lighter, more modern academic look with soft pastel color blocks, paper-like surfaces, rounded panels, and a startup-style layout. The content is intentionally more detailed than the original so students can study, review, and practice from one page.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="tabs-wrap">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="future" onclick="switchTab('future')">The Future Tense</button>
+        <button class="tab-btn" data-tab="future-perfect" onclick="switchTab('future-perfect')">The Future Perfect</button>
+        <button class="tab-btn" data-tab="past-subjunctive" onclick="switchTab('past-subjunctive')">Past Subjunctive</button>
+      </div>
+    </div>
+
+    <main>
+      <!-- FUTURE -->
+      <section class="panel active" data-panel="future" id="panel-future">
+        <div class="section-shell">
+          <div class="lesson-column">
+            <article class="card card-accent text-block">
+              <div class="kicker">Tense overview</div>
+              <h2>El Futuro Simple</h2>
+              <p>
+                The Spanish future tense is used for actions that will happen later, predictions, and statements about what someone expects to do. In English, we often use “will” or “going to,” but Spanish usually uses one compact verb form. One helpful feature is that the future tense is built directly onto the infinitive, so once you know the endings, you can form it quickly for many verbs.
+              </p>
+              <p>
+                This tense is especially useful in career and workplace topics because it lets students talk about future jobs, interviews, promotions, company growth, and goals. For example, a student can say that they will apply for a position, will earn a raise, or will succeed in business.
+              </p>
+
+              <h3>How it works</h3>
+              <p>
+                Regular future forms are created by keeping the infinitive and adding the same endings to all verbs. The ending depends only on the subject, not on whether the verb ends in -ar, -er, or -ir.
+              </p>
+
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Pronoun</th>
+                      <th>Ending</th>
+                      <th>hablar</th>
+                      <th>comer</th>
+                      <th>vivir</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>yo</td><td>-é</td><td>hablaré</td><td>comeré</td><td>viviré</td></tr>
+                    <tr><td>tú</td><td>-ás</td><td>hablarás</td><td>comerás</td><td>vivirás</td></tr>
+                    <tr><td>él, ella, usted</td><td>-á</td><td>hablará</td><td>comerá</td><td>vivirá</td></tr>
+                    <tr><td>nosotros</td><td>-emos</td><td>hablaremos</td><td>comeremos</td><td>viviremos</td></tr>
+                    <tr><td>vosotros</td><td>-éis</td><td>hablaréis</td><td>comeréis</td><td>viviréis</td></tr>
+                    <tr><td>ellos, ustedes</td><td>-án</td><td>hablarán</td><td>comerán</td><td>vivirán</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3>Important irregular stems</h3>
+              <p>
+                Some very common verbs keep the same future endings but change their stem before the ending is added. This makes them look different, but the pattern is still simple once memorized.
+              </p>
+              <div class="pill-row">
+                <div class="pill">tener → tendr-</div>
+                <div class="pill">venir → vendr-</div>
+                <div class="pill">poder → podr-</div>
+                <div class="pill">saber → sabr-</div>
+                <div class="pill">haber → habr-</div>
+                <div class="pill">querer → querr-</div>
+                <div class="pill">hacer → har-</div>
+                <div class="pill">decir → dir-</div>
+                <div class="pill">poner → pondr-</div>
+                <div class="pill">salir → saldr-</div>
+              </div>
+
+              <h3>When students use the future tense</h3>
+              <ul class="rule-list">
+                <li>To describe a future action that has not happened yet.</li>
+                <li>To make a prediction about a career, company, or workplace event.</li>
+                <li>To speak about a goal, plan, or expectation in a formal way.</li>
+                <li>To discuss time expressions such as <em>en el futuro</em>, <em>el próximo año</em>, and <em>dentro de diez años</em>.</li>
+              </ul>
+
+              <h3>Useful notes</h3>
+              <p>
+                The future tense often sounds more formal than English. In casual speech, Spanish speakers sometimes use <em>ir a + infinitive</em>, but the true future tense is still important for class, reading, writing, and advanced grammar.
+              </p>
+            </article>
+
+            <article class="card card-accent">
+              <div class="kicker">Examples in context</div>
+              <div class="example-list">
+                <div class="example">
+                  <div class="es">El contador ganará un aumento de sueldo el próximo año.</div>
+                  <div class="en">The accountant will earn a raise next year.</div>
+                </div>
+                <div class="example">
+                  <div class="es">La empresa contratará a muchos aspirantes durante la primavera.</div>
+                  <div class="en">The company will hire many applicants during the spring.</div>
+                </div>
+                <div class="example">
+                  <div class="es">En el futuro, el arquitecto diseñará edificios más sostenibles.</div>
+                  <div class="en">In the future, the architect will design more sustainable buildings.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Dentro de diez años, yo tendré una carrera estable en los negocios.</div>
+                  <div class="en">Within ten years, I will have a stable career in business.</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Vocabulary in context</div>
+              <h3>Workplace words used here</h3>
+              <div class="vocab-list">
+                <div class="vocab-item"><strong>el ascenso</strong><span>promotion</span></div>
+                <div class="vocab-item"><strong>el aumento de sueldo</strong><span>raise</span></div>
+                <div class="vocab-item"><strong>la carrera</strong><span>career</span></div>
+                <div class="vocab-item"><strong>la compañía, la empresa</strong><span>company, firm</span></div>
+                <div class="vocab-item"><strong>el gerente, la gerente</strong><span>manager</span></div>
+                <div class="vocab-item"><strong>solicitar</strong><span>to apply for</span></div>
+                <div class="vocab-item"><strong>ganar</strong><span>to earn</span></div>
+                <div class="vocab-item"><strong>obtener</strong><span>to get, to obtain</span></div>
+              </div>
+            </section>
+
+            <section class="vocab-panel">
+              <div class="kicker">Forming future verbs</div>
+              <h3>Quick pattern</h3>
+              <div class="formula">
+                <div class="formula-item">Infinitive + future ending<span>hablar + é = hablaré</span></div>
+                <div class="formula-item">Irregular stem + future ending<span>tendr- + ás = tendrás</span></div>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <div class="section-shell" style="margin-top: 18px;">
+          <div class="lesson-column">
+            <article class="card">
+              <div class="practice-head">
+                <div>
+                  <div class="kicker">Practice questions</div>
+                  <h3>Future tense quiz</h3>
+                </div>
+                <div class="progress-note">Answer all 5 questions to reveal your score.</div>
+              </div>
+
+              <div class="quiz-wrap" id="mcq-future">
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 1 of 5</div>
+                  <div class="mcq-question">Which form correctly completes the sentence? El arquitecto _____ el puesto mañana.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'future',1,'B')"><span class="opt-letter">A</span> solicitaba</button>
+                    <button class="mcq-option" onclick="answer(this,'future',1,'B')"><span class="opt-letter">B</span> solicitará</button>
+                    <button class="mcq-option" onclick="answer(this,'future',1,'B')"><span class="opt-letter">C</span> solicita</button>
+                    <button class="mcq-option" onclick="answer(this,'future',1,'B')"><span class="opt-letter">D</span> solicite</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-future-1">Correct. <em>Solicitará</em> is the third person singular future form of <em>solicitar</em>. The sentence talks about tomorrow, so the future tense is the best choice.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 2 of 5</div>
+                  <div class="mcq-question">Which verb has an irregular future stem?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'future',2,'C')"><span class="opt-letter">A</span> trabajar</button>
+                    <button class="mcq-option" onclick="answer(this,'future',2,'C')"><span class="opt-letter">B</span> ganar</button>
+                    <button class="mcq-option" onclick="answer(this,'future',2,'C')"><span class="opt-letter">C</span> poder</button>
+                    <button class="mcq-option" onclick="answer(this,'future',2,'C')"><span class="opt-letter">D</span> obtener</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-future-2"><em>Poder</em> is irregular in the future. Its stem changes to <em>podr-</em>, while the future endings stay the same.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 3 of 5</div>
+                  <div class="mcq-question">Translate: We will invest in the company within ten years.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'future',3,'A')"><span class="opt-letter">A</span> Invertiremos en la empresa dentro de diez años.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',3,'A')"><span class="opt-letter">B</span> Invertimos en la empresa dentro de diez años.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',3,'A')"><span class="opt-letter">C</span> Invertiríamos en la empresa dentro de diez años.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',3,'A')"><span class="opt-letter">D</span> Invertiramos en la empresa dentro de diez años.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-future-3"><em>Invertiremos</em> is the nosotros future of <em>invertir</em>. The time phrase <em>dentro de diez años</em> signals a future idea.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 4 of 5</div>
+                  <div class="mcq-question">A la reunión próxima, el gerente _____ los nuevos beneficios.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'future',4,'D')"><span class="opt-letter">A</span> presentó</button>
+                    <button class="mcq-option" onclick="answer(this,'future',4,'D')"><span class="opt-letter">B</span> presenta</button>
+                    <button class="mcq-option" onclick="answer(this,'future',4,'D')"><span class="opt-letter">C</span> presentaba</button>
+                    <button class="mcq-option" onclick="answer(this,'future',4,'D')"><span class="opt-letter">D</span> presentará</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-future-4"><em>Presentará</em> is correct. The word <em>próxima</em> indicates an upcoming meeting, so the action belongs in the future.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 5 of 5</div>
+                  <div class="mcq-question">Which sentence uses the future tense correctly?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'future',5,'B')"><span class="opt-letter">A</span> La secretaria renunció la semana que viene.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',5,'B')"><span class="opt-letter">B</span> La secretaria renunciará la semana que viene.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',5,'B')"><span class="opt-letter">C</span> La secretaria renunciaba la semana que viene.</button>
+                    <button class="mcq-option" onclick="answer(this,'future',5,'B')"><span class="opt-letter">D</span> La secretaria renuncie la semana que viene.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-future-5"><em>Renunciará</em> is the future form of <em>renunciar</em>. It is the only option that correctly places the resignation in the future.</div>
+                </div>
+
+                <div class="score-banner" id="score-future">
+                  <div class="score-text">Score: <span id="score-future-val">0</span> / 5</div>
+                  <button class="reset-btn" onclick="resetQuiz('future')">Reset Questions</button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Key time expressions</div>
+              <h3>Useful phrases</h3>
+              <div class="accent-band">
+                <div class="accent-box"><strong>dentro de</strong><span>used for “within” a period of time</span></div>
+                <div class="accent-box alt-2"><strong>en el futuro</strong><span>used to talk about later times in a broad sense</span></div>
+                <div class="accent-box alt-3"><strong>próximo, próxima</strong><span>means next, upcoming, or approaching</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUTURE PERFECT -->
+      <section class="panel" data-panel="future-perfect" id="panel-future-perfect">
+        <div class="section-shell">
+          <div class="lesson-column">
+            <article class="card card-accent text-block">
+              <div class="kicker">Tense overview</div>
+              <h2>El Futuro Perfecto</h2>
+              <p>
+                The future perfect tense describes an action that will have been completed before a future point in time. It combines the idea of future time with completion. In English, it is usually translated as “will have” plus a past participle.
+              </p>
+              <p>
+                This tense is useful when students want to describe a deadline, predict that something will already be finished, or explain that one event will be done before another future event. In a workplace setting, it can describe a report that will have been written, a resume that will have been sent, or an interview that will have already happened.
+              </p>
+
+              <h3>How to form it</h3>
+              <p>
+                Use the future tense of <em>haber</em> plus the past participle of the main verb. The participle does not change for gender or number in this tense.
+              </p>
+
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Pronoun</th>
+                      <th>Future of haber</th>
+                      <th>Example with hablar</th>
+                      <th>Example with obtener</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>yo</td><td>habré</td><td>habré hablado</td><td>habré obtenido</td></tr>
+                    <tr><td>tú</td><td>habrás</td><td>habrás hablado</td><td>habrás obtenido</td></tr>
+                    <tr><td>él, ella, usted</td><td>habrá</td><td>habrá hablado</td><td>habrá obtenido</td></tr>
+                    <tr><td>nosotros</td><td>habremos</td><td>habremos hablado</td><td>habremos obtenido</td></tr>
+                    <tr><td>vosotros</td><td>habréis</td><td>habréis hablado</td><td>habréis obtenido</td></tr>
+                    <tr><td>ellos, ustedes</td><td>habrán</td><td>habrán hablado</td><td>habrán obtenido</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3>Past participles</h3>
+              <ul class="rule-list">
+                <li><strong>-ar verbs:</strong> remove -ar and add -ado, such as <em>contratar → contratado</em>.</li>
+                <li><strong>-er and -ir verbs:</strong> remove the ending and add -ido, such as <em>invertir → invertido</em>.</li>
+                <li><strong>Common irregulars:</strong> <em>hecho</em>, <em>dicho</em>, <em>visto</em>, <em>escrito</em>, <em>puesto</em>.</li>
+              </ul>
+
+              <h3>When to use it</h3>
+              <ul class="rule-list">
+                <li>To show that something will already be finished by a future deadline.</li>
+                <li>To make a logical guess about what has happened before a future moment.</li>
+                <li>To describe progress in projects, interviews, applications, and career planning.</li>
+                <li>To pair with expressions such as <em>para mañana</em>, <em>para el año que viene</em>, and <em>cuando</em>.</li>
+              </ul>
+
+              <h3>Why it matters</h3>
+              <p>
+                The future perfect helps students sound more precise and more advanced. Instead of only saying what will happen, they can say what will already be completed. That difference is important in both spoken and written Spanish.
+              </p>
+            </article>
+
+            <article class="card card-accent">
+              <div class="kicker">Examples in context</div>
+              <div class="example-list">
+                <div class="example">
+                  <div class="es">Para el año que viene, el bombero habrá completado su entrenamiento.</div>
+                  <div class="en">By next year, the firefighter will have completed his training.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Cuando llegue la entrevistadora, nosotros ya habremos enviado la solicitud.</div>
+                  <div class="en">By the time the interviewer arrives, we will have already sent the application.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Dentro de diez años, muchos técnicos habrán aprendido teletrabajo.</div>
+                  <div class="en">Within ten years, many technicians will have learned telecommuting.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Para la videoconferencia, el reportero habrá escrito el anuncio.</div>
+                  <div class="en">By the videoconference, the reporter will have written the announcement.</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Vocabulary in context</div>
+              <h3>Words that fit this tense</h3>
+              <div class="vocab-list">
+                <div class="vocab-item"><strong>el currículum</strong><span>résumé</span></div>
+                <div class="vocab-item"><strong>la entrevista</strong><span>interview</span></div>
+                <div class="vocab-item"><strong>el entrevistador, la entrevistadora</strong><span>interviewer</span></div>
+                <div class="vocab-item"><strong>la solicitud de trabajo</strong><span>job application</span></div>
+                <div class="vocab-item"><strong>el anuncio</strong><span>advertisement</span></div>
+                <div class="vocab-item"><strong>contratar</strong><span>to hire</span></div>
+                <div class="vocab-item"><strong>obtener</strong><span>to obtain, to get</span></div>
+                <div class="vocab-item"><strong>despedir</strong><span>to fire</span></div>
+              </div>
+            </section>
+
+            <section class="vocab-panel">
+              <div class="kicker">Structure</div>
+              <h3>Formula</h3>
+              <div class="formula">
+                <div class="formula-item">Future of haber + past participle<span>habrá + escrito = habrá escrito</span></div>
+                <div class="formula-item">Completion before a future point<span>done before the deadline</span></div>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <div class="section-shell" style="margin-top: 18px;">
+          <div class="lesson-column">
+            <article class="card">
+              <div class="practice-head">
+                <div>
+                  <div class="kicker">Practice questions</div>
+                  <h3>Future perfect quiz</h3>
+                </div>
+                <div class="progress-note">Use the clues in each sentence to choose the completed action.</div>
+              </div>
+
+              <div class="quiz-wrap" id="mcq-future-perfect">
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 1 of 5</div>
+                  <div class="mcq-question">Which option correctly forms the future perfect of obtener for yo?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'fp',1,'C')"><span class="opt-letter">A</span> he obtenido</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',1,'C')"><span class="opt-letter">B</span> había obtenido</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',1,'C')"><span class="opt-letter">C</span> habré obtenido</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',1,'C')"><span class="opt-letter">D</span> haya obtenido</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-fp-1"><em>Habré obtenido</em> is formed with the future of <em>haber</em> plus the participle <em>obtenido</em>. It means I will have obtained.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 2 of 5</div>
+                  <div class="mcq-question">Para la videoconferencia, el reportero _____ el anuncio.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'fp',2,'B')"><span class="opt-letter">A</span> escribió</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',2,'B')"><span class="opt-letter">B</span> habrá escrito</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',2,'B')"><span class="opt-letter">C</span> escribirá</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',2,'B')"><span class="opt-letter">D</span> había escrito</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-fp-2"><em>Habrá escrito</em> shows that the announcement will already be finished before the videoconference.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 3 of 5</div>
+                  <div class="mcq-question">What is the past participle of invertir?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'fp',3,'D')"><span class="opt-letter">A</span> invertado</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',3,'D')"><span class="opt-letter">B</span> invirtiendo</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',3,'D')"><span class="opt-letter">C</span> invertido</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',3,'D')"><span class="opt-letter">D</span> invertido</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-fp-3"><em>Invertido</em> is the correct past participle of <em>invertir</em>.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 4 of 5</div>
+                  <div class="mcq-question">Translate: By next year, we will have hired three designers.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'fp',4,'A')"><span class="opt-letter">A</span> Para el año que viene, habremos contratado a tres diseñadores.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',4,'A')"><span class="opt-letter">B</span> Para el año que viene, contrataremos a tres diseñadores.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',4,'A')"><span class="opt-letter">C</span> Para el año que viene, hemos contratado a tres diseñadores.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',4,'A')"><span class="opt-letter">D</span> Para el año que viene, habíamos contratado a tres diseñadores.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-fp-4"><em>Habremos contratado</em> correctly shows a completed future action. The other options describe other time frames.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 5 of 5</div>
+                  <div class="mcq-question">Which sentence uses the future perfect correctly?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'fp',5,'C')"><span class="opt-letter">A</span> Para mañana, el jefe despide al empleado.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',5,'C')"><span class="opt-letter">B</span> Para mañana, el jefe despidió al empleado.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',5,'C')"><span class="opt-letter">C</span> Para mañana, el jefe habrá despedido al empleado.</button>
+                    <button class="mcq-option" onclick="answer(this,'fp',5,'C')"><span class="opt-letter">D</span> Para mañana, el jefe despedirá al empleado.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-fp-5"><em>Habrá despedido</em> is the completed future action. It means the firing will already be finished by tomorrow.</div>
+                </div>
+
+                <div class="score-banner" id="score-fp">
+                  <div class="score-text">Score: <span id="score-fp-val">0</span> / 5</div>
+                  <button class="reset-btn" onclick="resetQuiz('fp')">Reset Questions</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Time expressions</div>
+              <h3>Common signals</h3>
+              <div class="accent-band">
+                <div class="accent-box"><strong>para mañana</strong><span>by tomorrow</span></div>
+                <div class="accent-box alt-2"><strong>para el año que viene</strong><span>by next year</span></div>
+                <div class="accent-box alt-3"><strong>cuando</strong><span>when, used to mark the future deadline</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAST SUBJUNCTIVE -->
+      <section class="panel" data-panel="past-subjunctive" id="panel-past-subjunctive">
+        <div class="section-shell">
+          <div class="lesson-column">
+            <article class="card card-accent text-block">
+              <div class="kicker">Tense overview</div>
+              <h2>El Imperfecto de Subjuntivo</h2>
+              <p>
+                The past subjunctive is used when the main clause is in the past and the dependent clause needs the subjunctive mood. It often appears after expressions of desire, doubt, emotion, necessity, or hypothetical situations. This tense is an important step toward advanced Spanish because it connects grammar, meaning, and sequence of tenses.
+              </p>
+              <p>
+                In a workplace context, the past subjunctive is useful for talking about what a boss wanted, what a manager expected, what was necessary at a meeting, or what an applicant should have done in the past. It is one of the most practical tenses for advanced class writing because it appears in both formal and everyday communication.
+              </p>
+
+              <h3>The core rule</h3>
+              <p>
+                Start with the ellos/ellas form of the preterite, remove -ron, and add the past subjunctive endings. This rule works for regular and irregular verbs alike.
+              </p>
+
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Pronoun</th>
+                      <th>-ra ending</th>
+                      <th>hablaron</th>
+                      <th>tuvieron</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>yo</td><td>-ra</td><td>hablara</td><td>tuviera</td></tr>
+                    <tr><td>tú</td><td>-ras</td><td>hablaras</td><td>tuvieras</td></tr>
+                    <tr><td>él, ella, usted</td><td>-ra</td><td>hablara</td><td>tuviera</td></tr>
+                    <tr><td>nosotros</td><td>-ramos</td><td>habláramos</td><td>tuviéramos</td></tr>
+                    <tr><td>vosotros</td><td>-rais</td><td>hablarais</td><td>tuvierais</td></tr>
+                    <tr><td>ellos, ustedes</td><td>-ran</td><td>hablaran</td><td>tuvieran</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3>When it appears</h3>
+              <ul class="rule-list">
+                <li>After verbs of desire in the past, such as <em>quería que</em> and <em>esperaba que</em>.</li>
+                <li>After doubt or denial in the past, such as <em>dudaba que</em> and <em>no creía que</em>.</li>
+                <li>After past expressions of emotion, such as <em>estaba contento de que</em>.</li>
+                <li>After impersonal expressions of necessity or importance, such as <em>era necesario que</em>.</li>
+                <li>In hypothetical situations with <em>si</em>, especially when the result is conditional.</li>
+                <li>After <em>como si</em> when describing something that is not really true.</li>
+              </ul>
+
+              <h3>Sequence of tenses</h3>
+              <p>
+                If the main verb is present or future, Spanish usually uses the present subjunctive. If the main verb is in the preterite, imperfect, or conditional, Spanish usually uses the past subjunctive. This sequence helps the sentence stay logically consistent in time.
+              </p>
+            </article>
+
+            <article class="card card-accent">
+              <div class="kicker">Examples in context</div>
+              <div class="example-list">
+                <div class="example">
+                  <div class="es">El jefe quería que la secretaria preparara el currículum antes de la entrevista.</div>
+                  <div class="en">The boss wanted the secretary to prepare the resume before the interview.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Era necesario que los aspirantes solicitaran el puesto a tiempo.</div>
+                  <div class="en">It was necessary that the applicants apply for the position on time.</div>
+                </div>
+                <div class="example">
+                  <div class="es">Si yo fuera arquitecta, diseñaría edificios sostenibles.</div>
+                  <div class="en">If I were an architect, I would design sustainable buildings.</div>
+                </div>
+                <div class="example">
+                  <div class="es">La jefa dudaba que el peluquero renunciara tan pronto.</div>
+                  <div class="en">The boss doubted that the hairdresser would resign so soon.</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Vocabulary in context</div>
+              <h3>Words that pair well with the past subjunctive</h3>
+              <div class="vocab-list">
+                <div class="vocab-item"><strong>el jefe, la jefa</strong><span>boss</span></div>
+                <div class="vocab-item"><strong>la secretaria</strong><span>secretary</span></div>
+                <div class="vocab-item"><strong>el aspirante, la aspirante</strong><span>applicant</span></div>
+                <div class="vocab-item"><strong>la entrevista</strong><span>interview</span></div>
+                <div class="vocab-item"><strong>el gerente, la gerente</strong><span>manager</span></div>
+                <div class="vocab-item"><strong>tener éxito</strong><span>to be successful</span></div>
+                <div class="vocab-item"><strong>renunciar</strong><span>to resign</span></div>
+                <div class="vocab-item"><strong>despedir</strong><span>to fire</span></div>
+              </div>
+            </section>
+
+            <section class="vocab-panel">
+              <div class="kicker">Remember</div>
+              <h3>Formation shortcut</h3>
+              <div class="formula">
+                <div class="formula-item">Preterite ellos form minus -ron<span>hablaron → hablara</span></div>
+                <div class="formula-item">Same endings for regular and irregular verbs<span>tuvieron → tuviera</span></div>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <div class="section-shell" style="margin-top: 18px;">
+          <div class="lesson-column">
+            <article class="card">
+              <div class="practice-head">
+                <div>
+                  <div class="kicker">Practice questions</div>
+                  <h3>Past subjunctive quiz</h3>
+                </div>
+                <div class="progress-note">Watch for past triggers such as quería, era necesario, and dudaba.</div>
+              </div>
+
+              <div class="quiz-wrap" id="mcq-past-subjunctive">
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 1 of 5</div>
+                  <div class="mcq-question">El jefe quería que el contador _____ el informe antes del lunes.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'ps',1,'B')"><span class="opt-letter">A</span> termine</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',1,'B')"><span class="opt-letter">B</span> terminara</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',1,'B')"><span class="opt-letter">C</span> terminó</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',1,'B')"><span class="opt-letter">D</span> terminaba</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-ps-1"><em>Terminara</em> is correct because <em>quería</em> is in the past, so the dependent clause uses the past subjunctive.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 2 of 5</div>
+                  <div class="mcq-question">What is the past subjunctive stem of tener?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'ps',2,'C')"><span class="opt-letter">A</span> ten-</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',2,'C')"><span class="opt-letter">B</span> teni-</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',2,'C')"><span class="opt-letter">C</span> tuvie-</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',2,'C')"><span class="opt-letter">D</span> tend-</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-ps-2">The preterite ellos form is <em>tuvieron</em>. Remove <em>-ron</em> to get <em>tuvie-</em>, then add the endings.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 3 of 5</div>
+                  <div class="mcq-question">Which sentence correctly uses the past subjunctive?</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'ps',3,'D')"><span class="opt-letter">A</span> Espero que el aspirante tenga el currículum.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',3,'D')"><span class="opt-letter">B</span> Era importante que el electricista llega a tiempo.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',3,'D')"><span class="opt-letter">C</span> Quiero que el diseñador trabaja más.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',3,'D')"><span class="opt-letter">D</span> Era necesario que la gerente asistiera a la reunión.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-ps-3">Option D is correct. <em>Era necesario</em> is a past impersonal expression, so <em>asistiera</em> is the correct subjunctive form.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 4 of 5</div>
+                  <div class="mcq-question">Si yo _____ la gerente, daría un aumento de sueldo a todos.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'ps',4,'B')"><span class="opt-letter">A</span> soy</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',4,'B')"><span class="opt-letter">B</span> fuera</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',4,'B')"><span class="opt-letter">C</span> sea</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',4,'B')"><span class="opt-letter">D</span> era</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-ps-4"><em>Fuera</em> is correct in a hypothetical <em>si</em> clause. The conditional in the main clause confirms that this is a contrary-to-fact situation.</div>
+                </div>
+
+                <div class="mcq-card">
+                  <div class="mcq-num">Question 5 of 5</div>
+                  <div class="mcq-question">Translate: The interviewer asked that the applicants bring their resumes.</div>
+                  <div class="mcq-options">
+                    <button class="mcq-option" onclick="answer(this,'ps',5,'C')"><span class="opt-letter">A</span> El entrevistador pide que los aspirantes traigan sus currículos.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',5,'C')"><span class="opt-letter">B</span> El entrevistador pidió que los aspirantes traían sus currículos.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',5,'C')"><span class="opt-letter">C</span> El entrevistador pidió que los aspirantes trajeran sus currículos.</button>
+                    <button class="mcq-option" onclick="answer(this,'ps',5,'C')"><span class="opt-letter">D</span> El entrevistador pidió que los aspirantes traigan sus currículos.</button>
+                  </div>
+                  <div class="mcq-feedback" id="fb-ps-5"><em>Pidió ... trajeran</em> is correct. The preterite main clause requires the past subjunctive in the dependent clause.</div>
+                </div>
+
+                <div class="score-banner" id="score-ps">
+                  <div class="score-text">Score: <span id="score-ps-val">0</span> / 5</div>
+                  <button class="reset-btn" onclick="resetQuiz('ps')">Reset Questions</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="side-column">
+            <section class="vocab-panel">
+              <div class="kicker">Common triggers</div>
+              <h3>Words and structures</h3>
+              <div class="accent-band">
+                <div class="accent-box"><strong>quería que</strong><span>wanted that</span></div>
+                <div class="accent-box alt-2"><strong>era necesario que</strong><span>it was necessary that</span></div>
+                <div class="accent-box alt-3"><strong>dudaba que</strong><span>doubted that</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Spanish 2 Grammar Reference, El mundo del trabajo, educational use only.
+    </footer>
+  </div>
+
+<script>
+  const scores = { future: 0, fp: 0, ps: 0 };
+  const answered = { future: {}, fp: {}, ps: {} };
+
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    document.querySelector(`[data-panel="${tab}"]`).classList.add('active');
+  }
+
+  function getKey(quiz) {
+    if (quiz === 'fp') return 'fp';
+    if (quiz === 'ps') return 'ps';
+    return 'future';
+  }
+
+  function answer(optEl, quiz, qNum, correct) {
+    const key = getKey(quiz);
+    if (answered[key][qNum]) return;
+    answered[key][qNum] = true;
+
+    const card = optEl.closest('.mcq-card');
+    const options = card.querySelectorAll('.mcq-option');
+    const chosenLetter = optEl.querySelector('.opt-letter').textContent.trim();
+    const isCorrect = chosenLetter === correct;
+
+    options.forEach(option => {
+      const letter = option.querySelector('.opt-letter').textContent.trim();
+      option.classList.add('disabled');
+      option.disabled = true;
+      option.onclick = null;
+      if (letter === correct) option.classList.add('correct');
+    });
+
+    if (!isCorrect) optEl.classList.add('incorrect');
+    if (isCorrect) scores[key] += 1;
+
+    const feedback = document.getElementById(`fb-${quiz}-${qNum}`);
+    if (feedback) feedback.classList.add('show');
+
+    const totalAnswered = Object.keys(answered[key]).length;
+    if (totalAnswered === 5) {
+      const banner = document.getElementById(`score-${quiz}`);
+      const value = document.getElementById(`score-${quiz}-val`);
+      if (banner && value) {
+        value.textContent = scores[key];
+        banner.style.display = 'flex';
+      }
+    }
+  }
+
+  function resetQuiz(quiz) {
+    const key = getKey(quiz);
+    scores[key] = 0;
+    answered[key] = {};
+
+    const containerId = quiz === 'fp' ? 'mcq-future-perfect' : quiz === 'ps' ? 'mcq-past-subjunctive' : 'mcq-future';
+    const container = document.getElementById(containerId);
+
+    container.querySelectorAll('.mcq-option').forEach(option => {
+      option.classList.remove('correct', 'incorrect', 'disabled');
+      option.disabled = false;
+    });
+    container.querySelectorAll('.mcq-feedback').forEach(feedback => feedback.classList.remove('show'));
+
+    const banner = document.getElementById(`score-${quiz}`);
+    if (banner) banner.style.display = 'none';
+
+    const correctMap = {
+      future: ['B', 'C', 'A', 'D', 'B'],
+      fp: ['C', 'B', 'D', 'A', 'C'],
+      ps: ['B', 'C', 'D', 'B', 'C']
+    };
+
+    container.querySelectorAll('.mcq-card').forEach((card, index) => {
+      const qNum = index + 1;
+      const correct = correctMap[key][index];
+      card.querySelectorAll('.mcq-option').forEach(option => {
+        option.onclick = function () { answer(option, quiz, qNum, correct); };
+      });
+    });
+  }
+</script>
+</body>
+</html>
